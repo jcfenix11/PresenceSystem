@@ -11,8 +11,10 @@ import com.firebase.ui.auth.AuthUI;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final static int LOGIN_PERMISSION=1000;
+
     Button btnLogin;
+
+    private final static int LOGIN_PERMISSION=1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().setAllowNewEmailAccounts(true).build(),LOGIN_PERMISSION
+                startActivityForResult(
+                        AuthUI.getInstance().createSignInIntentBuilder()
+                        .setAllowNewEmailAccounts(true).build(),LOGIN_PERMISSION
                 );
             }
         });
